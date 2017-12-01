@@ -13,7 +13,15 @@
         android:theme="@style/AppTheme">
         <activity
             android:label="@string/title_activity_home"
-            android:name=".HomeActivity" />
+            android:name=".HomeActivity"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".AudioRecordingActivity"></activity>
     </application>
 
 </manifest>

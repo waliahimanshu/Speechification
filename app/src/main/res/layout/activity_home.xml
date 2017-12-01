@@ -13,8 +13,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@id/navigation"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="10dp"
         app:fabSize="normal"
         app:srcCompat="@drawable/ic_keyboard_voice_black_24dp" />
 
