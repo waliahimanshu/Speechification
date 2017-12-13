@@ -1,20 +1,34 @@
 package io.github.waliahimanshu.speechification;
 
+import android.content.Context;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.annotation.RequiresApi;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
-import android.view.View;
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class HomeActivity extends AppCompatActivity {
 
-    private FloatingActionButton recordActionButton;
+    @BindView(R.id.navigation) BottomNavigationView navigation;
 
+    @BindView(R.id.start_record_btn) FloatingActionButton recordActionButton;
+
+    @OnClick(R.id.start_record_btn)
+    public void onRecord(){
+        startActivity(AudioRecordingActivity.getIntent(getBaseContext()));
+        overridePendingTransition(R.anim.right_in, R.anim.left_out);
+
+    }
+
+
+    public static Intent getIntent(Context baseContext) {
+        return new Intent(baseContext, HomeActivity.class);
+    }
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -22,8 +36,6 @@ public class HomeActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    return true;
-                case R.id.navigation_dashboard:
                     return true;
                 case R.id.navigation_notifications:
                     return true;
@@ -36,21 +48,8 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        ButterKnife.bind(this);
 
-        recordActionButton = (FloatingActionButton) findViewById(R.id.record);
-        recordActionButton.setOnClickListener(new View.OnClickListener() {
-            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-            @Override
-            public void onClick(View v) {
-
-                Intent i = new Intent(getBaseContext(),AudioRecordingActivity.class);
-                startActivity(i);
-                overridePendingTransition(R.anim.right_in, R.anim.left_out);
-
-            }
-        });
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
-
 }
