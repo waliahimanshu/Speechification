@@ -1,5 +1,5 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -10,14 +10,29 @@
         android:layout_height="0dp"
         android:layout_weight="1">
 
+
         <ImageView
             android:id="@+id/icon"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:layout_centerInParent="true"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:contentDescription="@null"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
             android:scaleType="fitCenter"
-            android:src="@null"/>
+            android:src="@color/md_red_500" />
+
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:inputType="textMultiLine"
+            tools:text="helloi ijedie deijd ejdijeidjejdiejd
+            jeidjiejdiejdijeidj iejdiej djeidje diejd ieidjeidjiejdiejdijeidjejdiejdijedjeijdiejdijed
+            djsjdkjskdjskjdksjdksjdkjsjdjskdksjdjskdjksjdskdjsd" />
 
     </RelativeLayout>
 

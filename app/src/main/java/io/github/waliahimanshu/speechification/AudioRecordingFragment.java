@@ -6,15 +6,11 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.TextView;
-import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 public class AudioRecordingFragment extends Fragment {
-    @BindView(R.id.listening) TextView listening;
-    @BindView(R.id.stop_button) Button stopRecordingButton;
+//    @BindView(R.id.listening) TextView listening;
+//    @BindView(R.id.stop_button) Button stopRecordingButton;
 
     boolean mStartRecording = true;
     private RecordAudioHelper mRecordAudioHelper;
@@ -24,12 +20,12 @@ public class AudioRecordingFragment extends Fragment {
     }
 
     @SuppressLint("SetTextI18n")
-    @OnClick(R.id.stop_button)
-    public void onStopRecording() {
-        mRecordAudioHelper.stopRecording();
-        listening.setText("Recording stopped");
-        startActivity(HomeActivity.getIntent(getContext()));
-    }
+//    @OnClick(R.id.stop_button)
+//    public void onStopRecording() {
+//        mRecordAudioHelper.stopRecording();
+//        listening.setText("Recording stopped");
+//        startActivity(HomeActivity.getIntent(getContext()));
+//    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
